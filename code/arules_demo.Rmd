@@ -20,7 +20,7 @@ First, load the data and read as transaction data.
 ```{r echo = TRUE, eval = FALSE}
 library(arules)
 
-groceries <- read.transactions(".../groceries.csv", sep = ",")
+groceries <- read.transactions("groceries.csv", sep = ",")
 
 groceries <- read.transactions(file.choose(), sep = ",")
 ```
@@ -63,7 +63,7 @@ Let's start with a basic implementation of `apriori()` to mine these data.
 
 ```{r echo = TRUE, eval = FALSE}
 g_rules <- apriori(groceries, 
-                   parameter = list(support = 0.006, 
+                   parameter = list(support = 0.006, #Tune because the default would only leave the top items we found before. This is about twice a day - rewatch the video for this part !!!!
                                     confidence = 0.25, 
                                     minlen = 2)); summary(g_rules)
 ```
@@ -85,6 +85,8 @@ pip_rules <- subset(g_rules,
                     items %in% "pip fruit"); inspect(sort(pip_rules, 
                                                           by = "confidence"))
 ```
+
+<!-- There's a lot of whole milk and yogurt - but these are top items. So maybe -->
 
 We can also write the results of our mining effort as a data frame via `as()`. Note, at last check, the function doesn't yet support tibbles.
 
