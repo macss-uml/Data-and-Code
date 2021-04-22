@@ -1,13 +1,7 @@
 ---
 title: "SOM Application"
 author: "Philip Waggoner"
-date: " "
-output: html_document
 ---
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
 
 ## Basics
 
