@@ -15,8 +15,6 @@ library(tictoc)
 library(patchwork)
 library(Rtsne)
 library(umap)
-library(tidymodels)
-library(embed)
 
 # Read in cleaned and preprocessed 2019 ANES Pilot Data (35 FTs + democrat party feature)
 anes <- read_rds(here("Data", "anes.rds"))
