@@ -139,9 +139,6 @@ umap_fit_5 <- anes[,1:35] %>%
        n_epochs = 500)
   
 umap_fit_5 <- anes %>% 
-  mutate_if(.funs = scale,
-            .predicate = is.numeric,
-            scale = FALSE) %>% 
   mutate(First_Dimension = umap_fit_5$layout[,1],
          Second_Dimension = umap_fit_5$layout[,2]) %>% 
   gather(key = "Variable",
@@ -154,8 +151,8 @@ k_5 <- ggplot(umap_fit_5, aes(First_Dimension, Second_Dimension,
   scale_color_manual(values=c(amerika_palettes$Republican[1], 
                               amerika_palettes$Democrat[1]),
                      name="Democrat",
-                     breaks=c("-0.418325434439179", 
-                              "0.581674565560822"),
+                     breaks=c("0", 
+                              "1"),
                      labels=c("No", 
                               "Yes")) +
   labs(title = " ",
@@ -172,9 +169,6 @@ umap_fit_e_20 <- anes[,1:35] %>%
        n_epochs = 20)
 
 umap_fit_e_20 <- anes %>% 
-  mutate_if(.funs = scale,
-            .predicate = is.numeric,
-            scale = FALSE) %>% 
   mutate(First_Dimension = umap_fit_e_20$layout[,1],
          Second_Dimension = umap_fit_e_20$layout[,2]) %>% 
   gather(key = "Variable",
@@ -187,8 +181,8 @@ e_20 <- ggplot(umap_fit_e_20, aes(First_Dimension, Second_Dimension,
   scale_color_manual(values=c(amerika_palettes$Republican[1], 
                               amerika_palettes$Democrat[1]),
                      name="Democrat",
-                     breaks=c("-0.418325434439179", 
-                              "0.581674565560822"),
+                     breaks=c("0", 
+                              "1"),
                      labels=c("No", 
                               "Yes")) +
   labs(title = " ",
