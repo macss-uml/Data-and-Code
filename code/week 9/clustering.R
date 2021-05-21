@@ -81,7 +81,7 @@ ggdendrogram(hc_complete)
 
 # Recall, that to generate clusters, we make a horizontal cut somewhere on the dendrogram, severing the tree into multiple subtrees. 
 
-# The height of the cut will dictate how many clusters are formed. Note: we are using height here (nidicating a height in measure distance). But you could instead cut for a specific number of clusters by specifying k instead.
+# The height of the cut will dictate how many clusters are formed. Note: we are using height here (indicating a height in *measured distance*). But you could instead cut for a specific number of clusters by specifying `k` instead.
 
 # First, try cutting the tree at a height of 4 splits the dendrogram into "subtrees"
 h <- 4
